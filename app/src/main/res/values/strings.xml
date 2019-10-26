@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="welcome_to_">WELCOME TO SLEEPTIGHT</string>
+    <string name="let_s_get_y">Let\'s get you well-rested.</string>
+    <string name="current_tar">Current Target:</string>
+    <string name="average_wak">Average Wake:</string>
+    <string name="current_tar_time">11:30 pm</string>
+    <string name="wake">8:30 am</string>
+    <string name="average_sleep">Average Sleep:</string>
+    <string name="hours">9 hours</string>
+
+
+
 </resources>

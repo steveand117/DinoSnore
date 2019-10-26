@@ -2,12 +2,20 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/android_1"
+    android:background="@drawable/gradient"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:clipToOutline="true"
-    android:background="@drawable/test_bg"
     android:elevation="4dp">
-        <TextView
+    <!--android:clipToOutline="true"-->
+
+    <ImageView
+        android:id="@+id/stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/test"
+        android:scaleType="center"></ImageView>
+
+    <TextView
         android:id="@+id/welcome_to_"
         android:layout_width="258dp"
         android:layout_height="134dp"
