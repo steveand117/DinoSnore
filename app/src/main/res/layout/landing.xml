@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/android_1"
+    android:background="@drawable/gradient"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:elevation="4dp">
+    <!--android:clipToOutline="true"-->
+
+    <ImageView
+        android:id="@+id/stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/test"
+        android:scaleType="center"></ImageView>
+
+    <TextView
+        android:id="@+id/welcome_to_"
+        android:layout_width="258dp"
+        android:layout_height="134dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="250dp"
+        android:text="@string/welcome_to_"
+        android:textAppearance="@style/welcome_to_"
+        android:gravity="center_horizontal|top"
+            />
+    </RelativeLayout>
+

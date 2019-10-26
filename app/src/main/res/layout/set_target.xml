@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/android_1"
+    android:background="@drawable/gradient"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:elevation="4dp">
+
+
+    <TextView
+        android:id="@+id/let_s_get_y"
+        android:layout_width="430dp"
+        android:layout_height="39dp"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="55dp"
+        android:text="@string/let_s_get_y"
+        android:textAppearance="@style/let_s_get_y"
+        android:gravity="center_horizontal|top"
+        />
+
+    <!--onClick, open an overlay window with an edittext with new time. set the time to be new time
+    if they submit it (see mockup)-->
+    <Button
+        android:id="@+id/target"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/let_s_get_y"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Set Target Bedtime"/>
+
+    <TextView
+        android:id="@+id/current_tar"
+        android:layout_below="@id/target"
+        android:layout_width="134dp"
+        android:layout_height="21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="197dp"
+        android:text="@string/current_tar"
+        android:textAppearance="@style/current_tar"
+        android:gravity="center_horizontal|top"
+        />
+
+    <!--should be able to be changed/edited based on user input-->
+    <TextView
+        android:id="@+id/average_wak"
+        android:layout_below="@id/current_tar"
+        android:layout_width="129dp"
+        android:layout_height="21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="227dp"
+        android:text="@string/average_wak"
+        android:textAppearance="@style/current_tar"
+        android:gravity="center_horizontal|top"
+        />
+
+    <TextView
+        android:id="@+id/current_tar_time"
+        android:layout_toRightOf="@id/current_tar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="232dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="197dp"
+        android:text="@string/current_tar_time"
+        android:textAppearance="@style/current_tar"
+        android:gravity="center_horizontal|top"
+        />
+
+    <!--should also be edited but this is based on the pulled data-->
+    <TextView
+        android:id="@+id/wake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="234dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="229dp"
+        android:text="@string/wake"
+        android:textAppearance="@style/current_tar"
+        android:gravity="center_horizontal|top"
+        />
+
+    <!--Replace this with an actual graph, THIS IS A PLACEHOLDER-->
+    <View
+        android:id="@+id/graph"
+        android:layout_width="302dp"
+        android:layout_height="207dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/graph"
+        />
+
+
+    <TextView
+        android:id="@+id/average_sleep"
+        android:layout_width="129dp"
+        android:layout_height="21dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="77dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="526dp"
+        android:text="@string/average_sleep"
+        android:textAppearance="@style/current_tar"
+        android:gravity="center_horizontal|top"
+        />
+
+    <!--Should be calculated based on actual sleep time and wake time-->
+    <TextView
+        android:id="@+id/hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="263dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="529dp"
+        android:text="@string/hours"
+        android:textAppearance="@style/current_tar"
+        android:gravity="center_horizontal|top"
+        />
+
+
+
+</RelativeLayout>
