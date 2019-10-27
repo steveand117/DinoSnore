@@ -12,11 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
@@ -30,28 +27,24 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
     private DatabaseReference mDatabase;
     private TextView showTime;
     private Button showDialog;
-
     private String username;
     private String password;
     private String time;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        User owo = new User();
+        System.out.println("please");
+        System.out.println(owo.getIdealHour());
+        System.out.println(owo.getIdealMinute());
+        System.out.println("Unique ID is:" + owo.getUniqueID());
+        generateUI();
 
-        int requestForPerms = 1; // set this to zero after you're done with it
-        startActivityForResult(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS), requestForPerms);
-        UsageStatsManager mUsageStatsManager = (UsageStatsManager) this.getSystemService(Context.USAGE_STATS_SERVICE);
-        Calendar currentCalendar = Calendar.getInstance();
-        Date currentDate = currentCalendar.getTime();
+    }
 
-        Map<String, UsageStats> lUsageStatsMap = mUsageStatsManager.queryAndAggregateUsageStats(currentCalendar.getTimeInMillis()- 86400000, currentCalendar.getTimeInMillis());
-        for (Map.Entry<String, UsageStats> entry : lUsageStatsMap.entrySet()) {
-            System.out.println(entry.getKey() + " used in foreground for " + entry.getValue().getTotalTimeInForeground());
-            System.out.println(TimeUnit.MILLISECONDS.toSeconds(entry.getValue().getTotalTimeInForeground()));
-
-        }
-
+    public void generateUI(){
         mFireBaseButton = findViewById(R.id.firebase_btn);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -81,9 +74,6 @@ public class MainActivity extends AppCompatActivity implements TimePickerDialog.
 
             }
         });
-
-
-
     }
 
     @Override
