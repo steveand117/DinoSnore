@@ -1,7 +1,9 @@
 package com.example.sleeptight.ui;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,12 +24,16 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
     private Button awake;
     private TextView showTime;
     private User user;
-    private static Calendar currentCalendar = Calendar.getInstance();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.user = (User) getIntent().getSerializableExtra("USER_OBJECT");
         setContentView(R.layout.set_target);
+
+        Stats stats = new Stats(MainActivity.context);
+        if(!stats.checkPermissions()) {
+            startActivityForResult(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS), 1);
+        }
 
         //Set Time Button
         setTime = findViewById(R.id.target);
@@ -46,6 +52,7 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
         awake.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                Calendar currentCalendar = Calendar.getInstance();
                 Stats stats = new Stats(MainActivity.context);
                 stats.setTime(currentCalendar.getTimeInMillis());
                 long timeSleeping = stats.getTotalTime(stats.getLastTime());

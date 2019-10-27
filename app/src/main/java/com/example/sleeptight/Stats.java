@@ -1,8 +1,10 @@
 package com.example.sleeptight;
 
+import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.provider.Settings;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +28,7 @@ public class Stats {
 
     public void setTime(long time){
         this.time = time;
+        System.out.println(time);
     }
 
     /**
@@ -99,8 +102,9 @@ public class Stats {
      * @return true if given
      */
     public boolean checkPermissions(){
-        int res = context.checkCallingOrSelfPermission(Settings.ACTION_USAGE_ACCESS_SETTINGS);
-
-        return res == PackageManager.PERMISSION_GRANTED;
+        AppOpsManager appOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+        int mode = appOps.unsafeCheckOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS,
+                android.os.Process.myUid(), context.getPackageName());
+        return mode == AppOpsManager.MODE_ALLOWED;
     }
 }
