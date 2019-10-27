@@ -93,14 +93,23 @@
         />
 
     <!--Replace this with an actual graph, THIS IS A PLACEHOLDER-->
-    <View
-        android:id="@+id/graph"
+<!--    <View-->
+<!--        android:id="@+id/graph"-->
+<!--        android:layout_width="302dp"-->
+<!--        android:layout_height="207dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginTop="300dp"-->
+<!--        android:background="@drawable/graph"-->
+<!--        />-->
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
         android:layout_width="302dp"
         android:layout_height="207dp"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="300dp"
-        android:background="@drawable/graph"
         />
 
 
