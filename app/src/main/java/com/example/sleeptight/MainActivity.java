@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 User owo = new User();
-                Stats stats = new Stats(context);
-                stats.update(owo.getUniqueID(), 7000000);
                 NextActivity(owo);
             }
         });

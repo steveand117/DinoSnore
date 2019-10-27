@@ -15,11 +15,14 @@ import com.example.sleeptight.R;
 import com.example.sleeptight.Stats;
 import com.example.sleeptight.User;
 
+import java.util.Calendar;
+
 public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
     private Button setTime;
     private Button awake;
     private TextView showTime;
     private User user;
+    private static Calendar currentCalendar = Calendar.getInstance();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,11 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
             @Override
             public void onClick(View v) {
                 Stats stats = new Stats(MainActivity.context);
-                stats.getLastTime();
+                stats.setTime(currentCalendar.getTimeInMillis());
+                long timeSleeping = stats.getTotalTime(stats.getLastTime());
+                long entireTime = stats.getTotalTime(user.getIdealHour(),user.getIdealMinute());
+                //subtract the two above to get time NOT sleeping
+                stats.update(user.getUniqueID(), entireTime, timeSleeping, entireTime - timeSleeping);
             }
         });
     }
