@@ -139,6 +139,8 @@
             />
 
     </RelativeLayout>
+
+
     <Button
         android:id="@+id/check_in"
         android:layout_below="@id/bottom"
@@ -153,51 +155,60 @@
         android:textColor="#FEFEF4"
         android:text="I'm Awake!"/>
 
-    <Button
-        android:id="@+id/set"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:fontFamily="@font/spinnaker"
-        android:layout_width="137dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bottom_button"
-        android:gravity="bottom|center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:textColor="#FEFEF4"
-        android:drawableTop="@drawable/clock"
-        android:text="Set Bedtime"/>
+        >
+        <Button
+            android:id="@+id/set"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/spinnaker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_button"
+            android:gravity="bottom|center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FEFEF4"
+            android:drawableTop="@drawable/clock"
+            android:text="Set Bedtime"/>
 
-    <Button
-        android:id="@+id/data"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/set"
-        android:fontFamily="@font/spinnaker"
-        android:layout_width="137dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bottom_button"
-        android:gravity="bottom|center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:textColor="#FEFEF4"
-        android:drawableTop="@drawable/graph_vector"
-        android:text="Your Data"/>
+        <Button
+            android:id="@+id/data"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/set"
+            android:fontFamily="@font/spinnaker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_button"
+            android:gravity="bottom|center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FEFEF4"
+            android:drawableTop="@drawable/graph_vector"
+            android:text="Your Data"/>
 
-    <Button
-        android:id="@+id/misc"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/data"
-        android:fontFamily="@font/spinnaker"
-        android:layout_width="137dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bottom_button"
-        android:gravity="bottom|center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:textColor="#FEFEF4"
-        android:drawableTop="@drawable/people"
-        android:text="Connect"/>
-
+        <Button
+            android:id="@+id/misc"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/data"
+            android:fontFamily="@font/spinnaker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_button"
+            android:gravity="bottom|center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FEFEF4"
+            android:drawableTop="@drawable/people"
+            android:text="Connect"/>
+    </LinearLayout>
 </RelativeLayout>
