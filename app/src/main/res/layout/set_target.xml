@@ -101,11 +101,10 @@
         android:layout_height="207dp"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="300dp"
-
+        android:layout_marginTop="300dp"/>
     <RelativeLayout
         android:id="@+id/bottom"
-        android:layout_below="@id/graph"
+        android:layout_below="@id/chart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
