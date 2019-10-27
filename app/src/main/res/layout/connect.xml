@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/android_1"
+    android:background="@drawable/gradient"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:elevation="4dp">
+
+    <TextView
+    android:id="@+id/your_friend"
+    android:fontFamily="@font/spinnaker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:layout_centerHorizontal="true"
+    android:text="@string/your_friend"
+    android:textAppearance="@style/your_friend"
+    android:gravity="center_horizontal|top" />
+
+    <RelativeLayout
+        android:id="@+id/friends"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/your_friend"
+        >
+        <TextView
+            android:id="@+id/rectangle_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stephanie Yang \n\nSlept at 11:30 last night"
+            android:padding="15dp"
+            android:layout_gravity="center"
+            android:textAppearance="@style/friend_style1"
+            android:background="@drawable/light_rectangle"
+        />
+
+        <ImageView
+            android:id="@+id/dino_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dino_1"
+            android:weight="2"
+            android:layout_toRightOf="@id/rectangle_1"
+            android:layout_alignParentRight="true"
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/rectangle_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rectangle_1"
+            android:text="Nathan Zhu \n\nSlept at 1:30 AM last night"
+            android:padding="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:textAppearance="@style/friend_style1"
+            android:background="@drawable/light_rectangle"
+        />
+        <ImageView
+            android:id="@+id/dino_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dino_1"
+            android:layout_toLeftOf="@id/rectangle_2"
+            android:padding="15dp"
+            android:layout_below="@id/dino_1"
+            android:layout_alignParentRight="true"
+            ></ImageView>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:inputType="text"
+        android:hint="Search for Friends"/>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/spinnaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#FEFEF4"
+        android:text="search"
+        android:onClick="myMethod"/>
+    <LinearLayout
+        android:id="@+id/navigation"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/set"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/spinnaker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_button"
+            android:gravity="bottom|center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FEFEF4"
+            android:drawableTop="@drawable/clock"
+            android:text="Set Bedtime"/>
+
+        <Button
+            android:id="@+id/data"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/set"
+            android:fontFamily="@font/spinnaker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_button"
+            android:gravity="bottom|center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FEFEF4"
+            android:drawableTop="@drawable/graph_vector"
+            android:text="Your Data"/>
+
+        <Button
+            android:id="@+id/misc"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/data"
+            android:fontFamily="@font/spinnaker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bottom_button"
+            android:gravity="bottom|center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FEFEF4"
+            android:drawableTop="@drawable/people"
+            android:text="Connect"/>
+    </LinearLayout>
+
+</RelativeLayout>

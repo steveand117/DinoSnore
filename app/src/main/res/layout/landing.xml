@@ -20,38 +20,69 @@
         android:fontFamily="@font/spinnaker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="255dp"
+        android:layout_centerInParent="true"
         android:text="@string/welcome_to_"
         android:textAppearance="@style/welcome_to_"
-        android:gravity="center_horizontal|top"
-            />
+        android:gravity="center_horizontal|top" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcome_to_"
-        android:layout_marginTop="15dp"
+        android:layout_above="@id/welcome_to_"
+        android:layout_marginBottom="15dp"
         android:src="@drawable/temp_logo"
         android:gravity="center_horizontal|top"
         android:layout_centerInParent="true"/>
 
+    <EditText
+        android:id="@+id/username"
+        android:layout_below="@id/welcome_to_"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:inputType="text"
+        android:hint="Username"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_below="@id/username"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:inputType="textPassword"
+        android:hint="Password"/>
+
     <Button
-        android:id="@+id/enter"
-        android:layout_below="@id/logo"
+        android:id="@+id/login"
         android:layout_centerInParent="true"
         android:fontFamily="@font/spinnaker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/password"
         android:layout_marginTop="30dp"
         android:background="@drawable/button"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textColor="#FEFEF4"
-        android:text="Enter"
+        android:text="Login"
         android:onClick="myMethod"/>
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:fontFamily="@font/spinnaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/sign_up"
+        android:textAppearance="@style/sign_up"
+        android:gravity="center_horizontal|top" />
 
     </RelativeLayout>
 
