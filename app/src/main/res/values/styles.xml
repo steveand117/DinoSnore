@@ -77,6 +77,18 @@
         </item>
 
     </style>
+    <style name="num_sleep">
+
+        <item name="android:textSize">
+            48sp
+        </item>
+
+        <item name="android:textColor">
+            #FEFEF4
+        </item>
+
+    </style>
+
 
 
 </resources>
