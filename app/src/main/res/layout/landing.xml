@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/android_1"
+    android:background="@drawable/gradient"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:elevation="4dp">
+    <!--android:clipToOutline="true"-->
+
+    <ImageView
+        android:id="@+id/stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/test"
+        android:scaleType="center"></ImageView>
+
+    <TextView
+        android:id="@+id/welcome_to_"
+        android:fontFamily="@font/spinnaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="255dp"
+        android:text="@string/welcome_to_"
+        android:textAppearance="@style/welcome_to_"
+        android:gravity="center_horizontal|top"
+            />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome_to_"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/temp_logo"
+        android:gravity="center_horizontal|top"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_below="@id/logo"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/spinnaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#FEFEF4"
+        android:text="Enter"/>
+
+    </RelativeLayout>
+
