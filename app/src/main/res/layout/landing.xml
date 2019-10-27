@@ -50,7 +50,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textColor="#FEFEF4"
-        android:text="Enter"/>
+        android:text="Enter"
+        android:onClick="myMethod"/>
 
     </RelativeLayout>
 
