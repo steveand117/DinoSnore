@@ -8,95 +8,84 @@
     android:elevation="4dp">
 
     <TextView
-    android:id="@+id/your_friend"
-    android:fontFamily="@font/spinnaker"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    android:layout_centerHorizontal="true"
-    android:text="@string/your_friend"
-    android:textAppearance="@style/your_friend"
-    android:gravity="center_horizontal|top" />
-
-    <RelativeLayout
-        android:id="@+id/friends"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/your_friend"
-        >
-        <TextView
-            android:id="@+id/rectangle_1"
-            android:fontFamily="@font/spinnaker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stephanie Yang \n\nSlept at 11:30 last night"
-            android:padding="15dp"
-            android:layout_gravity="center"
-            android:textAppearance="@style/friend_style1"
-            android:background="@drawable/light_rectangle"
-        />
-
-        <ImageView
-            android:id="@+id/dino_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dino_1"
-            android:layout_toRightOf="@id/rectangle_1"
-            android:layout_alignParentRight="true"
-            ></ImageView>
-
-        <TextView
-            android:id="@+id/rectangle_2"
-            android:fontFamily="@font/spinnaker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/rectangle_1"
-            android:text="Nathan Zhu \n\nSlept at 1:30 AM last night"
-            android:padding="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"
-            android:textAppearance="@style/friend_style1"
-            android:background="@drawable/light_rectangle"
-        />
-        <ImageView
-            android:id="@+id/dino_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dino_2"
-            android:layout_toLeftOf="@id/rectangle_2"
-            android:padding="10dp"
-            android:layout_below="@id/dino_1"
-            android:layout_alignParentRight="true"
-            ></ImageView>
-
-    </RelativeLayout>
-
-    <EditText
-        android:id="@+id/search"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:inputType="text"
-        android:hint="Search for Friends"/>
-
-    <Button
-        android:id="@+id/search_button"
-        android:layout_centerInParent="true"
+        android:id="@+id/net_sleep"
         android:fontFamily="@font/spinnaker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:textColor="#FEFEF4"
-        android:text="search"
-        android:onClick="myMethod"/>
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Your Net Sleep:"
+        android:textAppearance="@style/your_friend"
+        android:gravity="center_horizontal|top" />
+    <TextView
+        android:id="@+id/num_sleep"
+        android:layout_below="@id/net_sleep"
+        android:fontFamily="@font/spinnaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="-7.5 \nHours"
+        android:textAppearance="@style/num_sleep"
+        android:gravity="center_horizontal|top" />
+
+    <ImageView
+        android:id="@+id/pie_graph"
+        android:layout_below="@id/num_sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/pie_graph"
+        android:layout_centerInParent="true"
+        android:scaleType="center"></ImageView>
+
+    <LinearLayout
+        android:id="@+id/negative_effects"
+        android:layout_below="@id/pie_graph"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        >
+
+        <TextView
+            android:id="@+id/negative_title"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/spinnaker"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="After 7.5 hours of sleep lost:"
+            android:textAppearance="@style/your_friend"
+            />
+        <TextView
+            android:id="@+id/effects"
+            android:fontFamily="@font/spinnaker"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unable_to_f"
+            android:textAppearance="@style/sign_up"
+            />
+        <TextView
+            android:id="@+id/overerall"
+            android:fontFamily="@font/spinnaker"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/overall"
+            android:textAppearance="@style/your_friend"
+            />
+
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/navigation"
         android:orientation="horizontal"
@@ -154,5 +143,6 @@
             android:drawableTop="@drawable/people"
             android:text="Connect"/>
     </LinearLayout>
+
 
 </RelativeLayout>

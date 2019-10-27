@@ -84,5 +84,14 @@
         android:textAppearance="@style/sign_up"
         android:gravity="center_horizontal|top" />
 
+    <ImageView
+        android:id="@+id/sleeping_dino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_up"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/sleeping_dino"
+        android:layout_centerInParent="true"/>
+
     </RelativeLayout>
 
