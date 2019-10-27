@@ -2,6 +2,7 @@ package com.example.sleeptight.ui;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.icu.text.TimeZoneFormat;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
@@ -17,7 +18,11 @@ import com.example.sleeptight.R;
 import com.example.sleeptight.Stats;
 import com.example.sleeptight.User;
 
+import org.w3c.dom.Text;
+
 import java.util.Calendar;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
     private Button setTime;
@@ -25,6 +30,8 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
     private Button dataMenu;
     private Button connectMenu;
     private TextView showTime;
+    private TextView avgSleep;
+    private TextView avgAwake;
     private User user;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +61,25 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
         awake.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Calendar currentCalendar = Calendar.getInstance();
+                TimeZone timeZone = TimeZone.getTimeZone("EST");
+                Calendar currentCalendar = Calendar.getInstance(timeZone);
                 Stats stats = new Stats(MainActivity.context);
                 stats.setTime(currentCalendar.getTimeInMillis());
                 long timeSleeping = stats.getTotalTime(stats.getLastTime());
                 long entireTime = stats.getTotalTime(user.getIdealHour(),user.getIdealMinute());
-                //subtract the two above to get time NOT sleeping
+                System.out.println("entire time: " + entireTime);
+                System.out.println("time sleeping: " + timeSleeping);
+                System.out.println("time awake" + (entireTime - timeSleeping));
                 stats.update(user.getUniqueID(), entireTime, timeSleeping, entireTime - timeSleeping);
+                avgSleep = findViewById(R.id.hours);
+                avgSleep.setText(String.format("%dh:%dm", TimeUnit.MILLISECONDS.toHours(timeSleeping),
+                        TimeUnit.MILLISECONDS.toMinutes(timeSleeping) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(timeSleeping))
+                ));
+                avgAwake = findViewById(R.id.wake);
+                avgAwake.setText(String.format("%dh:%dm", TimeUnit.MILLISECONDS.toHours(entireTime-timeSleeping),
+                        TimeUnit.MILLISECONDS.toMinutes(entireTime-timeSleeping) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(entireTime-timeSleeping))
+                ));
+
             }
         });
 
@@ -68,7 +87,7 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
         dataMenu.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(Home.this, MainActivity.class );
+                Intent intent = new Intent(Home.this, Data.class );
                 intent.putExtra("USER_OBJECT", user);
                 startActivity(intent);
             }

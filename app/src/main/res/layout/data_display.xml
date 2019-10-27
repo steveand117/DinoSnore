@@ -12,7 +12,7 @@
         android:fontFamily="@font/spinnaker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="37dp"
         android:layout_centerHorizontal="true"
         android:text="Your Net Sleep:"
         android:textAppearance="@style/your_friend"

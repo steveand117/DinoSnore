@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/dino_2"
             android:layout_toLeftOf="@id/rectangle_2"
-            android:padding="10dp"
+            android:layout_marginTop="15dp"
             android:layout_below="@id/dino_1"
             android:layout_alignParentRight="true"
             ></ImageView>
@@ -75,11 +75,13 @@
 
     <EditText
         android:id="@+id/search"
+        android:layout_below="@id/friends"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
+        android:layout_marginTop="15dp"
         android:inputType="text"
         android:hint="Search for Friends"/>
 

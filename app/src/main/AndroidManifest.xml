@@ -30,6 +30,11 @@
             android:name=".ui.Connect" >
         </activity>
 
+        <activity
+            android:name=".ui.Data" >
+        </activity>
+
+
     </application>
 
 

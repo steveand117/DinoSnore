@@ -1,7 +1,10 @@
 package com.example.sleeptight;
 
+import android.widget.EditText;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -24,7 +27,9 @@ public class User implements Serializable{
         uniqueID = temp.getKey();
         idealMinute = 0;
         idealHour = 0;
+
     }
+
 
     public void setIdealHour(int hour){
         DatabaseReference temp = FirebaseDatabase.getInstance().getReference();

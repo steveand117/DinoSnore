@@ -1,17 +1,17 @@
 <resources>
 
     <string name="app_name">My Application</string>
-    <string name="welcome_to_">DINO SNORE</string>
+    <string name="welcome_to_">DINOSNORE</string>
     <string name="let_s_get_y">Let\'s get you well-rested.</string>
     <string name="current_tar">Current Target:</string>
-    <string name="average_wak">Average Wake:</string>
-    <string name="current_tar_time">11:30 PM</string>
-    <string name="wake">8:30 AM</string>
-    <string name="average_sleep">Average Sleep:</string>
-    <string name="hours">9 hours</string>
+    <string name="average_wak">Time awake last night: </string>
+    <string name="current_tar_time">----</string>
+    <string name="wake">----</string>
     <string name="sign_up">Sign Up</string>
+    <string name="average_sleep">Sleep last night: </string>
+    <string name="hours">----</string>
     <string name="your_friend">Your Friends</string>
     <string name="unable_to_f">- Deterioration of motor functions\n- Decline in expressive speech</string>
-    <string name="overall">Overall: Will seem lethargic to others</string>
+    <string name="overall">Overall: Will seem lethargic</string>
 
 </resources>

@@ -4,15 +4,12 @@ import android.app.AppOpsManager;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.provider.Settings;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class Stats {
     private UsageStatsManager mUsageStatsManager;
@@ -83,13 +80,15 @@ public class Stats {
      * @return total time in milliseconds
      */
     public long getTotalTime(int hour, int minutes) {
-        Calendar temp = Calendar.getInstance();
-        //int year,int month,int day,int hourOfDay, int minute,int second)
+        TimeZone timeZone = TimeZone.getTimeZone("EST");
+        Calendar temp = Calendar.getInstance(timeZone);
         if(hour < 12) {
             temp.set(temp.get(Calendar.YEAR), temp.get(Calendar.MONTH), temp.get(Calendar.DAY_OF_MONTH), hour, minutes);
         } else {
             temp.set(temp.get(Calendar.YEAR), temp.get(Calendar.MONTH), temp.get(Calendar.DAY_OF_MONTH) - 1, hour, minutes);
         }
+        System.out.println(temp.getTime());
+        System.out.println(time);
         return time - temp.getTimeInMillis();
     }
 

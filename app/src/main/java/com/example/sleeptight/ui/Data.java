@@ -7,40 +7,39 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sleeptight.MainActivity;
 import com.example.sleeptight.R;
 import com.example.sleeptight.User;
 
-public class Connect extends AppCompatActivity {
-    private Button dataMenu;
-    private Button setTimeMenu;
+public class Data extends AppCompatActivity {
     private User user;
-
+    private Button setMenu;
+    private Button connectMenu;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.user = (User) getIntent().getSerializableExtra("USER_OBJECT");
-        setContentView(R.layout.connect);
+        setContentView(R.layout.data_display);
 
-        dataMenu = findViewById(R.id.data);
-        dataMenu.setOnClickListener(new View.OnClickListener() {
+        setMenu = findViewById(R.id.set);
+        setMenu.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Connect.this, Data.class );
+            public void onClick(View v){
+                Intent intent = new Intent(Data.this, Home.class );
                 intent.putExtra("USER_OBJECT", user);
                 startActivity(intent);
             }
         });
 
-        setTimeMenu = findViewById(R.id.set);
-        setTimeMenu.setOnClickListener(new View.OnClickListener() {
+        connectMenu = findViewById(R.id.misc);
+        connectMenu.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Connect.this, Home.class );
+            public void onClick(View v){
+                Intent intent = new Intent(Data.this, Connect.class );
                 intent.putExtra("USER_OBJECT", user);
                 startActivity(intent);
             }
         });
-
     }
+
+
 }
