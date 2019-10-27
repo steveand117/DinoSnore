@@ -34,7 +34,7 @@ public class Stats {
      * @param lengthOfTime milliseconds since ideal sleeping time
      * @return true if updated
      */
-    public boolean update(String uniqueID, long lengthOfTime, long timeSleeping, losng timeAwake) {
+    public boolean update(String uniqueID, long lengthOfTime, long timeSleeping, long timeAwake) {
         HashMap<String, Long> dataMap = new HashMap<>();
         Map<String, UsageStats> lUsageStatsMap = mUsageStatsManager.queryAndAggregateUsageStats(time - lengthOfTime, time);
         for (Map.Entry<String, UsageStats> entry : lUsageStatsMap.entrySet()) {
