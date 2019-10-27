@@ -24,7 +24,7 @@ public class User {
         temp.setValue(dataMap);
         uniqueID = temp.getKey();
         idealMinute = 0;
-        idealMinute = 0;
+        idealHour = 0;
     }
 
     public void setIdealHour(int hour){
