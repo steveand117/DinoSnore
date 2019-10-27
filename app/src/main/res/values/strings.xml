@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">My Application</string>
     <string name="welcome_to_">SLEEPTIGHT</string>
     <string name="let_s_get_y">Let\'s get you well-rested.</string>
@@ -9,5 +8,7 @@
     <string name="wake">8:30 am</string>
     <string name="average_sleep">Average Sleep:</string>
     <string name="hours">9 hours</string>
+
+
 
 </resources>

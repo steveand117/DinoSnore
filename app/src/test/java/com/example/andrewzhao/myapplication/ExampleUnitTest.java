@@ -1,4 +1,4 @@
-package com.example.sleeptight;
+package com.example.andrewzhao.myapplication;
 
 import org.junit.Test;
 
