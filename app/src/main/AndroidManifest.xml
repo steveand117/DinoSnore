@@ -26,6 +26,9 @@
             android:name=".ui.Home" >
         </activity>
 
+        <activity
+            android:name=".ui.Connect" >
+        </activity>
 
     </application>
 

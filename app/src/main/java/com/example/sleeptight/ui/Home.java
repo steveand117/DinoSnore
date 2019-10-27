@@ -22,6 +22,8 @@ import java.util.Calendar;
 public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
     private Button setTime;
     private Button awake;
+    private Button dataMenu;
+    private Button connectMenu;
     private TextView showTime;
     private User user;
 
@@ -59,6 +61,26 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
                 long entireTime = stats.getTotalTime(user.getIdealHour(),user.getIdealMinute());
                 //subtract the two above to get time NOT sleeping
                 stats.update(user.getUniqueID(), entireTime, timeSleeping, entireTime - timeSleeping);
+            }
+        });
+
+        dataMenu = findViewById(R.id.data);
+        dataMenu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, MainActivity.class );
+                intent.putExtra("USER_OBJECT", user);
+                startActivity(intent);
+            }
+        });
+
+        connectMenu = findViewById(R.id.misc);
+        connectMenu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Home.this, Connect.class );
+                intent.putExtra("USER_OBJECT", user);
+                startActivity(intent);
             }
         });
     }
