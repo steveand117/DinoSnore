@@ -18,8 +18,6 @@
 //                             Bundle savedInstanceState) {
 //        // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.article_view, container, false);
-//    }
-//
 //    LineChart chart = (LineChart) findViewById(R.id.chart);
 //
 //    // The key is the hours of sleep gotten, and the value is the day of the week
@@ -28,8 +26,9 @@
 //        timesMap.put(6.5F, 2.0F);
 //        timesMap.put(8.5F, 3F);
 //    List<Entry> entries = new ArrayList<>();
-//    for(java.util.Map.Entry<Float, Float> singleTime : timesMap.entrySet()) {
+//        for (java.util.Map.Entry<Float, Float> singleTime : timesMap.entrySet()) {
 //        entries.add(new Entry(singleTime.getKey(), singleTime.getValue()));
 //    }
+//
 //
 //}
