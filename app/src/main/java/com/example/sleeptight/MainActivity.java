@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         context = getApplicationContext();
         setContentView(R.layout.landing);
 
-        enterBtn = findViewById(R.id.enter);
+        enterBtn = findViewById(R.id.login);
         enterBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
