@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -20,7 +21,14 @@
 
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.Home" >
+        </activity>
+
+
     </application>
+
+
 
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"

@@ -1,4 +1,4 @@
-package com.example.sleeptight;
+package com.example.sleeptight.ui;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;

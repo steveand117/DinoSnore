@@ -1,6 +1,5 @@
 package com.example.sleeptight;
 
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -10,7 +9,7 @@ public class User {
     private String uniqueID = "";
     private int idealHour;
     private int idealMinute;
-    private static int userNumber = 0;
+    private Stats stats;
 
     /**
      * Creates a new User
