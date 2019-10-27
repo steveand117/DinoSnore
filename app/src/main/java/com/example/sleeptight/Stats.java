@@ -5,16 +5,13 @@ import android.app.usage.UsageStatsManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.provider.Settings;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Stats{
+public class Stats {
     private UsageStatsManager mUsageStatsManager;
     private static Calendar currentCalendar = Calendar.getInstance();
     private final Context context;
@@ -52,6 +49,18 @@ public class Stats{
             return false;
         }
 
+    }
+
+    public long getLastTime() {
+        Map<String, UsageStats> lUsageStatsMap = mUsageStatsManager.queryAndAggregateUsageStats(currentCalendar.getTimeInMillis()- 80000000
+                , currentCalendar.getTimeInMillis());
+        long lastTime = Long.MIN_VALUE;
+        for (Map.Entry<String, UsageStats> entry : lUsageStatsMap.entrySet()) {
+            if(entry.getValue().getLastTimeForegroundServiceUsed() > lastTime) {
+                lastTime = entry.getValue().getLastTimeForegroundServiceUsed();
+            }
+        }
+        return lastTime;
     }
 
     /**

@@ -10,16 +10,23 @@ import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.sleeptight.MainActivity;
 import com.example.sleeptight.R;
+import com.example.sleeptight.Stats;
+import com.example.sleeptight.User;
 
 public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
     private Button setTime;
     private Button awake;
     private TextView showTime;
+    private User user;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.user = (User) getIntent().getSerializableExtra("USER_OBJECT");
         setContentView(R.layout.set_target);
+
+        //Set Time Button
         setTime = findViewById(R.id.target);
         showTime = findViewById(R.id.current_tar_time);
         setTime.setOnClickListener(new View.OnClickListener(){
@@ -31,17 +38,21 @@ public class Home extends AppCompatActivity implements TimePickerDialog.OnTimeSe
             }
         });
 
+        //I'm Awake Button
         awake = findViewById(R.id.check_in);
         awake.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Stats stats = new Stats(MainActivity.context);
+                stats.getLastTime();
             }
         });
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        user.setIdealHour(hourOfDay);
+        user.setIdealMinute(minute);
         String timestamp = "";
         boolean isam = true;
         if (hourOfDay == 0) {
